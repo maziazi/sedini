@@ -15,6 +15,27 @@ If you are not familiar with the different technologies used in this project, pl
 - [Tailwind CSS](https://tailwindcss.com)
 - [tRPC](https://trpc.io)
 
+Firstly you need this tech, that are required to run on local:
+
+1. Docker/Podman - Used for the database.
+2. node js (^20 is recomended).
+3. npm/yarn/pnpm/others (I will use pnpm for this guide).
+
+Step to run on local (first time only):
+
+1. Clone this repostiory git clone git@github.com:maziazi/sedini.git
+2. Move into the directory cd sedini
+3. Install all the dependancy pnpm install
+4. Move into the prisma directory cd prisma
+5. Run the docker compose file docker compose up
+6. populate the env variable cp .env.example .env
+7. Run the Pisma migration pnpm prisma db push
+8. Finaly the seeder pnpm prisma db seed
+
+After this step, you only need to start the server using:
+
+pnpm dev
+
 ## Learn More
 
 To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
