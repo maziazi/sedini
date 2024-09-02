@@ -1,0 +1,21 @@
+version: "4.33.0"
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: sedini
+    ports:
+      - 5433:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+  mailcatcher:
+    image: schickling/mailcatcher
+    ports: 
+      - 1025:1025
+      - 1080:1080
+
+volumes:
+  postgres_data:
+  
